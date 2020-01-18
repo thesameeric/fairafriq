@@ -2,42 +2,27 @@
   <div class="flex column nowrap col-lg-6">
     <section class="flex col-lg-6 f-sec vh-100">
         <div class="home flex col-lg-6 flex-wrap justify-content-space-between align-items-center">
-          <div class="flex column nowrap mar-for-mobile">
-            <h1 class="echo text-left">Test, Refine, <br> Evaluate <br> and Prototype</h1>
-            <p class="text-20 text-left mar-tb-15">Building Africa's biggest IoT lab.</p>
-            <div class="flex">
-              <router-link :to="{name: 'contact'}">
-                <a class="btn btn-colored" href=""> Talk to Us</a>
-              </router-link>
-            </div>
-            <div class="plusify">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 205 71" width="320px" height="120px" style="enable-background:new 0 0 205 71;" xml:space="preserve">
-              
-              <polyline class="st0" points="7.5,37.5 49.5,37.5 57.5,21.5 66.5,52.5 72.5,31.5 78.5,46.5 91.5,9.5 101.5,50.5 111.5,27.5 
-                121.5,59.5 124.5,37.5 202.5,37.5 "/>
-              </svg>
-            </div>
-          </div>
           <trephero></trephero>
         </div>
     </section>
     <section class="flex column nowrap col-lg-6 t-sec justify-content-center align-items-center">
-      <p class="heading text-left">EXPERIENCE THE NEXT PHASE OF CONNECTED TECHNOLOGY</p>
+      <p class="heading text-left">THE FOUNDATION</p>
       <p class="par col-lg-3">
-        TREP LABS is designed to provide and build affordable hardware solutions to health problems in Africa. The lab believes that connectivity will shift health care from curing sickness to enabling wellness.
-      </p>
+        <!-- eslint-disable-next-line -->
+Foundation for African Integrity (FAIR) is a non-profit charitable organisation, registered in the United States, United Kingdom, and Nigeria. It is a foundation seeking to create a platform to bring together Africans, African Americans, and other people of African descent, who believe in the nobleness of African virtues and values. This is a group of dedicated people who are committed to the rediscovery of our motherland through youth empowerment and development.      </p>
       <router-link :to="{name: 'about'}">
         <a class="btn btn-colored" href=""> Learn more about us</a>
       </router-link>
     </section>
-    <section class=" flex col-lg-6 align-items-center justify-content-center flex-wrap product-section">
+    <section
+      class=" flex col-lg-6 align-items-center justify-content-center flex-wrap product-section">
 
-          <img class="pl-img" src="../assets/rd.svg" alt="image of Realdrip device">
+          <img class="pl-img" src="../assets/img/ceo.jpg" alt="image of Realdrip device">
           <div class="flex justify-content-center col-lg-3 column nowrap commonpadding">
-            <p class="heading text-left">THE REALDRIP DEVICE </p>
+            <p class="heading text-left">FOUNDER AND CEO</p>
             <p class="col-lg-6 text-left par">
-              REALDRIP, a non-invasive device makes blood transfusion and drip treatment simpler and safer by continuously monitoring the flow rate, volume administered and automating the treatment process. This device leverages the IoT technology to eliminate the guesswork in setting IV flow rate, monitoring dosages and time taken as indicated on the treatment plan. This information is connected to dashboard and alerts to keep health professionals informed about each patient's specific situation.
-            </p>
+            <!-- eslint-disable-next-line -->
+This Foundation was established originally in the United Kingdom in 2005 by Mr. Emmanuel Fanimoh. The founder is very passionate about youth empowerment and development in Africa. He has presented several research papers on youth leadership including a recent presentation at GoldenCRI conference in Washington DC in January 2015.            </p>
             <span class="flex">
               <router-link :to="{name: 'realdrip'}">
                 <a class="btn btn-colored"> Learn more </a>
@@ -49,19 +34,52 @@
     <section class="flex col-lg-6 s-sec justify-content-center align-items-center">
       <div class="flex col-lg-6 flex-wrap justify-content-center align-items-center">
         <span class="flex column nowrap col-lg-3">
-          <p class="heading text-left">using connectivity and physical internet to drive a new era in physical health and wellness</p>
-          <p class="par col-sm-5 text-left">
-            We are on a mission to save lives by empowering today's medical team with affordable medical devices and services to improve their planning, process and producitivity.
+          <p class="heading text-left">
+            GET INVOLVED
           </p>
+          <p class="par col-sm-5 text-left">
+            <!-- eslint-disable-next-line -->
+            Join the list of people who share our vision to provide accessible and quality education for children across slums and remote communities and are willing to do something about it.
+          </p>
+            <span class="flex">
+              <router-link :to="{name: 'realdrip'}">
+                <a class="btn btn-colored"> Join </a>
+              </router-link>
+            </span>
         </span>
         <img class="pl-img" src="../assets/medicine.svg" alt="">
       </div>
     </section>
+    <!-- eslint-disable -->
+    <section
+      class=" flex column col-lg-6 align-items-center justify-content-center flex-wrap product-section">
+          <p class="heading text-left">
+            MEET THE TEAM
+          </p>
+        <ul class="flex flex-wrap staff-list">
+          <li class="flex column nowrap align-items-center">
+            <img class="pl-img" src="../assets/img/ceo.jpg" alt="image of Realdrip device">
+            <p class="staff-name">John Doe</p>
+            <p class="staff-title">CEO</p>
+          </li>
+          <li class="flex column nowrap align-items-center">
+            <img class="pl-img" src="../assets/img/ceo.jpg" alt="image of Realdrip device">
+            <p class="staff-name">Anthony Martial</p>
+            <p class="staff-title">Project analyst</p>
+          </li>
+          <li class="flex column nowrap align-items-center">
+            <img class="pl-img" src="../assets/img/ceo.jpg" alt="image of Realdrip device">
+            <p class="staff-name">Micheal Owen</p>
+            <p class="staff-title">Public relations</p>
+          </li>
+        </ul>
+    </section>
+
   </div>
 </template>
 
 <script>
-import trephero from '@/components/hero';
+import trephero from '@/components/hero.vue';
 
 export default {
   components: {
@@ -70,22 +88,8 @@ export default {
 };
 
 </script>
-<style scoped>
-  .pulsify {
-    width: 320px;
-  }
-  .st0 {
-      fill: none;
-      stroke-width:1; stroke-miterlimit:10;
-      stroke: #025e2d;
-      stroke-dasharray: 497;
-      stroke-dashoffset: 497;
-      animation: draw 9s ease-in-out 2s forwards infinite;
-    }
-    @keyframes draw {
-        from{ stroke-dashoffset: 1000; }
-        to { stroke-dashoffset: 0; }
-    }
+<style lang="scss" scoped>
+  @import '../assets/css/index.scss';
   .product-list li {
     width: 250px; height: 350px;
     overflow: hidden;
@@ -135,14 +139,28 @@ export default {
     margin: 20px 0;
   }
   .btn-colored {
-    background: #025e2d;
+    background: $primaryColor;
     color: #ffffff;
   }
   .mar-for-mobile {
       margin-top : 70px;
     }
+    ul.staff-list {
+      li {
+        margin: 12px 20px;
+        .staff-name {
+          font-weight: 500;
+          font-size: 20px;
+        }
+        .staff-title {
+          text-transform: uppercase;
+          color: #9b9b9b;
+          font-size: 14px;
+        }
+      }
+    }
   @media only screen and (max-width: 720px) {
-    
+
     .nodisplayformobile {
       display: none;
     }

@@ -1,15 +1,8 @@
 <template>
     <footer class="flex column col-lg-6 header justify-content-space-between">
-        <div class="fo-sec">
-            <div class="flex align-items-start column nowrap">
-                <p class="text text-left footer-pl">It doesn't end here <br> This is where it Begins.</p>
-                <a target="_blank" href="https://twitter.com/trephq">
-                    <img class="mini-icons2" src="../assets/twitter.svg" alt="">
-                </a>
-            </div>
-        </div>
         <div class="copycat">
-            &copy; 2019. Trep Labs. | Legal.
+            <!-- eslint-disable-next-line -->
+            &copy; Copyright 2020 - FOUNDATION FOR AFRICA INTEGRITY | 16 Pickering Road Birking IG11 8PG,   |    Nonprofit Organization
         </div>
     </footer>
 </template>

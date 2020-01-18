@@ -1,8 +1,9 @@
 <template>
-    <header id="header" class="flex col-lg-6 header justify-content-space-between align-items-center">
+    <header id="header"
+        class="flex col-lg-6 header justify-content-space-between align-items-center">
         <div>
             <a href="/">
-                <img class="logo" src="../assets/icon/TREP Labs.svg" alt="">
+                <img class="logo" src="../assets/logo.svg" alt="">
             </a>
         </div>
         <menu class="flex menu-holder">
@@ -20,7 +21,7 @@
                     <a @click="toggleMenu2" href="">About</a>
                 </router-link>
                 <router-link :to="{name: 'realdrip'}">
-                    <a @click="toggleMenu2" href="">Realdrip</a>
+                    <a @click="toggleMenu2" href="">What we do</a>
                 </router-link>
                 <router-link :to="{name: 'contact'}">
                     <a @click="toggleMenu2" href="">Contact</a>
@@ -34,12 +35,11 @@ export default {
   methods: {
     getElement(element) {
       const ele = document.querySelectorAll(element);
-      for (let i = 0; i < ele.length; i++) {
+      for (let i = 0; i < ele.length; i += 1) {
         return ele[i];
       }
     },
     toggleMenu() {
-    
       const style = document.createElement('style');
       const startTime = 0.3;
       const timeDiff = 0.2;
@@ -47,20 +47,19 @@ export default {
       document.head.appendChild(style);
       const nav = this.getElement('.slideinMenu');
       nav.classList.toggle('open');
-      const nav_a = nav.children;
-      for (let i = 0; i < nav_a.length; i++) {
-        nav_a[i].classList.add(`trepSlideIn${i}`);
+      const navA = nav.children;
+      for (let i = 0; i < navA.length; i += 1) {
+        navA[i].classList.add(`trepSlideIn${i}`);
         style.sheet.insertRule(`.trepSlideIn${i} {margin-left:0px; animation-name: slideitin${i}; animation-duration: ${startTime + (i * timeDiff)}s; animation-iteration-count:1 } `);
         style.sheet.insertRule(`@keyframes slideitin${i} { ${10 * i}% { margin-left:-500px; visibility:0;} 100% {margin-left: 0px; visibility:1} }`);
       }
     },
     toggleMenu2() {
-        
-        if (document.getElementById("menumenu").checked == true) {
-            document.getElementById("menumenu").checked = false;
-        }
-        const nav = this.getElement('.slideinMenu');
-        nav.classList.toggle('open');
+      if (document.getElementById('menumenu').checked === true) {
+        document.getElementById('menumenu').checked = false;
+      }
+      const nav = this.getElement('.slideinMenu');
+      nav.classList.toggle('open');
     },
   },
 };
