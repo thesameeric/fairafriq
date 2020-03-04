@@ -1,15 +1,24 @@
 <template>
   <div  class="flex justify-content-center align-items-center trephero">
-    <img class="hero-img" src="../assets/img/boy.jpg" alt="">
-    <div class="black-overlay"></div>
-    <h1 class="hero-text">Children's right must be protected</h1>
+    <carousel :per-page="1" :autoplay="true" :loop="true" autoplayTimeout="5000">
+      <slide>
+        <img class="hero-img" src="../assets/img/boy.jpg" alt="">
+      </slide>
+      <slide>
+        <img class="hero-img" src="../assets/img/group.jpg" alt="">
+      </slide>
+      <slide>
+        <img class="hero-img" src="../assets/img/pages.jpg" alt="">
+      </slide>
+    </carousel>
+    <!-- <div class="black-overlay"></div> -->
+    <!-- <h1 class="hero-text">Children's right must be protected</h1> -->
   </div>
 </template>
 <style lang="scss" scoped>
   .trephero {
-    position: absolute;
-    right: 0;
     width: 100%;
+    margin-bottom: 100px;
       img.hero-img {
         height: 100vh;
         width: 100%;
@@ -28,17 +37,20 @@
   }
   @media only screen and (max-width: 720px) {
     .trephero {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
     }
   }
 </style>
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
   name: 'trephero',
   props: {
     msg: String,
+  },
+  components: {
+    Carousel,
+    Slide,
   },
 };
 </script>

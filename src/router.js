@@ -19,9 +19,24 @@ export default new Router({
       component: () => import('./views/About.vue'),
     },
     {
-      path: '/realdrip',
-      name: 'realdrip',
+      path: '/whatwedo',
+      name: 'what we do',
       component: () => import('./views/realdrip.vue'),
+    },
+    {
+      path: '/stories',
+      name: 'our stories',
+      component: () => import('./views/ourstories.vue'),
+    },
+    {
+      path: '/team/:name',
+      name: 'team',
+      component: () => import('./views/team.vue'),
+    },
+    {
+      path: '/school',
+      name: 'school',
+      component: () => import('./views/school.vue'),
     },
     {
       path: '/contact',

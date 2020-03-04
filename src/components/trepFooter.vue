@@ -4,6 +4,17 @@
             <!-- eslint-disable-next-line -->
             &copy; Copyright 2020 - FOUNDATION FOR AFRICA INTEGRITY | 16 Pickering Road Birking IG11 8PG,   |    Nonprofit Organization
         </div>
+        <div class="flex flex-wrap text-45 justify-content-center">
+            <a href="#">
+                <i class='uil uil-facebook'></i>
+            </a>
+            <a href="#">
+                <i class='uil uil-twitter'></i>
+            </a>
+            <a href="#">
+                <i class='uil uil-linkedin'></i>
+            </a>
+        </div>
     </footer>
 </template>
 <style scoped>

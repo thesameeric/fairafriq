@@ -1,54 +1,54 @@
 <template>
   <div class="flex column nowrap col-lg-6">
-    <section class="flex col-lg-6 f-sec vh-100">
+    <section class="flex col-lg-6 vh-100">
         <div class="home flex col-lg-6 flex-wrap justify-content-space-between align-items-center">
           <trephero></trephero>
         </div>
     </section>
-    <section class="flex column nowrap col-lg-6 t-sec justify-content-center align-items-center">
-      <p class="heading text-left">THE FOUNDATION</p>
+    <section style="margin-top: 50px;"
+      class="flex column nowrap col-lg-6 t-sec justify-content-center align-items-center">
+      <p class="heading text-left">WHO ARE WE</p>
       <p class="par col-lg-3">
         <!-- eslint-disable-next-line -->
-Foundation for African Integrity (FAIR) is a non-profit charitable organisation, registered in the United States, United Kingdom, and Nigeria. It is a foundation seeking to create a platform to bring together Africans, African Americans, and other people of African descent, who believe in the nobleness of African virtues and values. This is a group of dedicated people who are committed to the rediscovery of our motherland through youth empowerment and development.      </p>
+FairAfriq is a non profit development organization transforming the society by empowering underserved and remote communities with quality education, entrepreneurial skills. The Foundation was established originally in the United Kingdom in 2005 by Mr Emmanuel Fanimoh. The founder is very passionate about youth empowerment and development in Africa which is achieved by collaborating with the government, private sector, individuals, civil society organizations and other developmental agencies towards building a resourceful and sustainable network. Most importantly building a network of socially responsible community of volunteers committed to social reformation.
+</p>
       <router-link :to="{name: 'about'}">
         <a class="btn btn-colored" href=""> Learn more about us</a>
       </router-link>
     </section>
+      <!-- eslint-disable -->
     <section
-      class=" flex col-lg-6 align-items-center justify-content-center flex-wrap product-section">
+      class=" flex col-lg-6 align-items-center flex-wrap product-section">
+      <form role="" form="" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="donate">
+      <div class="form-group">
+        <p class="heading text-left">DONATION BOX</p>
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="accounts@fairafriq.org">
+        <input type="hidden" name="lc" value="US">
+        <input type="hidden" name="item_name" value="Foundation for African Integrity">
+        <input type="hidden" name="button_subtype" value="services">
+        <input type="hidden" name="no_note" value="0">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+        <input type="hidden" name="on0" value="Contribution/payment for African development">
+        <label for="os0">Contribution/payment for African development</label>
 
-          <img class="pl-img" src="../assets/img/ceo.jpg" alt="image of Realdrip device">
-          <div class="flex justify-content-center col-lg-3 column nowrap commonpadding">
-            <p class="heading text-left">FOUNDER AND CEO</p>
-            <p class="col-lg-6 text-left par">
-            <!-- eslint-disable-next-line -->
-This Foundation was established originally in the United Kingdom in 2005 by Mr. Emmanuel Fanimoh. The founder is very passionate about youth empowerment and development in Africa. He has presented several research papers on youth leadership including a recent presentation at GoldenCRI conference in Washington DC in January 2015.            </p>
-            <span class="flex">
-              <router-link :to="{name: 'realdrip'}">
-                <a class="btn btn-colored"> Learn more </a>
-              </router-link>
-            </span>
+        <select name="os0" class="form-control">
+          <option value="Basic contribution/payment for African development =">Basic contribution/payment for African development = $25.00 USD</option>
+          <option value="Advance contribution/payment for African development =">Advance contribution/payment for African development = $50.00 USD</option>
+          <option value="Premium contribution/payment for African development =">Premium contribution/payment for African development = $150.00 USD</option>
+          <option value="Corporate Contribution =">Corporate Contribution = $250.00 USD</option>
+          <option value="Director's Contribution =">Director's Contribution = $500.00 USD</option>
+        </select> 
 
-          </div>
-    </section>
-    <section class="flex col-lg-6 s-sec justify-content-center align-items-center">
-      <div class="flex col-lg-6 flex-wrap justify-content-center align-items-center">
-        <span class="flex column nowrap col-lg-3">
-          <p class="heading text-left">
-            GET INVOLVED
-          </p>
-          <p class="par col-sm-5 text-left">
-            <!-- eslint-disable-next-line -->
-            Join the list of people who share our vision to provide accessible and quality education for children across slums and remote communities and are willing to do something about it.
-          </p>
-            <span class="flex">
-              <router-link :to="{name: 'realdrip'}">
-                <a class="btn btn-colored"> Join </a>
-              </router-link>
-            </span>
-        </span>
-        <img class="pl-img" src="../assets/medicine.svg" alt="">
+        <input type="hidden" name="on1" value="Write any instructions here:">
+        <label for="os1"> Enter any Instruction</label>
+        <input type="text" class="form-control" id="os1" name="os1" placeholder="" style="width:350px;">
+
+        <input type="submit" border="0" name="submit" value="Contribute">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
       </div>
+      </form>
     </section>
     <!-- eslint-disable -->
     <section
@@ -56,21 +56,55 @@ This Foundation was established originally in the United Kingdom in 2005 by Mr. 
           <p class="heading text-left">
             MEET THE TEAM
           </p>
-        <ul class="flex flex-wrap staff-list">
+        <ul class="flex flex-wrap justify-content-center staff-list">
           <li class="flex column nowrap align-items-center">
-            <img class="pl-img" src="../assets/img/ceo.jpg" alt="image of Realdrip device">
-            <p class="staff-name">John Doe</p>
-            <p class="staff-title">CEO</p>
+            <router-link to="/team/EmmanuelFanimoh">
+              <img class="pl-img" src="../assets/img/members/1.jpg" alt="image of Realdrip device">
+              <p class="staff-name">Mr Emmanuel Fanimoh</p>
+              <p class="staff-title">CEO</p>
+            </router-link>
           </li>
           <li class="flex column nowrap align-items-center">
-            <img class="pl-img" src="../assets/img/ceo.jpg" alt="image of Realdrip device">
-            <p class="staff-name">Anthony Martial</p>
-            <p class="staff-title">Project analyst</p>
+            <router-link to="/team/AyotolaFanimoh">
+              <img class="pl-img" src="../assets/img/members/2.jpg" alt="image of Realdrip device">
+              <p class="staff-name">Mrs Ayotola O. Fanimoh</p>
+              <p class="staff-title">Project analyst</p>
+            </router-link>
           </li>
           <li class="flex column nowrap align-items-center">
-            <img class="pl-img" src="../assets/img/ceo.jpg" alt="image of Realdrip device">
-            <p class="staff-name">Micheal Owen</p>
-            <p class="staff-title">Public relations</p>
+            <router-link to="/team/MarianOyindamolaFanimoh">
+              <img class="pl-img" src="../assets/img/members/3.jpg" alt="image of Realdrip device">
+              <p class="staff-name">Miss Marian Oyindamola Fanimoh</p>
+              <p class="staff-title">Public relations</p>
+            </router-link>
+          </li>
+          <li class="flex column nowrap align-items-center">
+            <router-link to="/team/TillyOpoku">
+              <img class="pl-img" src="../assets/img/members/4.jpg" alt="image of Realdrip device">
+              <p class="staff-name">Mrs Tilly Opoku</p>
+              <p class="staff-title">CEO</p>
+            </router-link>
+          </li>
+          <li class="flex column nowrap align-items-center">
+            <router-link to="/team/PetronellaKapijimpanga">
+              <img class="pl-img" src="../assets/img/members/5.jpg" alt="image of Realdrip device">
+              <p class="staff-name">Ms Petronella Kapijimpanga</p>
+              <p class="staff-title">Project analyst</p>
+            </router-link>
+          </li>
+          <li class="flex column nowrap align-items-center">
+            <router-link to="/team/MaryAloayeOtukpe">
+              <img class="pl-img" src="../assets/img/members/6.jpeg" alt="image of Realdrip device">
+              <p class="staff-name">Mrs Mary Aloaye Otukpe</p>
+              <p class="staff-title">Executive Board member and Partner</p>
+            </router-link>
+          </li>
+          <li class="flex column nowrap align-items-center">
+            <router-link to="/team/IsaacOgunmola">
+              <img class="pl-img" src="../assets/img/members/7.jpg" alt="image of Realdrip device">
+              <p class="staff-name">Mr Isaac Ogunmola</p>
+              <p class="staff-title">Executive Director of Nigeria Urban’s Affairs</p>
+            </router-link>
           </li>
         </ul>
     </section>
@@ -90,6 +124,42 @@ export default {
 </script>
 <style lang="scss" scoped>
   @import '../assets/css/index.scss';
+  .form-group {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    input {
+      padding: 7px 20px;
+      min-width: 200px;
+      height: 45px;
+      border-radius: 3px;
+      border: 1px solid #eeeeee;
+      margin: 7px 0;
+      max-width: 300px;
+    }
+    input[type='submit'] {
+      background: #139efc;
+      color: #FFF;
+      font-weight: 700;
+    }
+    select {
+      padding: 7px;
+      height: 45px;
+      min-width: 200px;
+      border-radius: 3px;
+      border: 1px solid #eeeeee;
+      margin: 7px 0;
+      max-width: 300px;
+    }
+    label {
+      padding: 5px 0;
+      margin-top: 12px;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+  }
   .product-list li {
     width: 250px; height: 350px;
     overflow: hidden;

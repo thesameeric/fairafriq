@@ -20,8 +20,14 @@
                 <router-link :to="{name: 'about'}">
                     <a @click="toggleMenu2" href="">About</a>
                 </router-link>
-                <router-link :to="{name: 'realdrip'}">
+                <router-link :to="{name: 'what we do'}">
                     <a @click="toggleMenu2" href="">What we do</a>
+                </router-link>
+                <router-link :to="{name: 'our stories'}">
+                    <a @click="toggleMenu2" href="">Our stories</a>
+                </router-link>
+                <router-link :to="{name: 'school'}">
+                    <a @click="toggleMenu2" href="">School / Education</a>
                 </router-link>
                 <router-link :to="{name: 'contact'}">
                     <a @click="toggleMenu2" href="">Contact</a>
@@ -86,10 +92,11 @@ export default {
         position: fixed;
         left: 0; top: 0;
         transition: all ease-in-out 2s;
-        z-index: 9999;
+        z-index: 99999999999;
     }
     .header.open {
-        background: #ffffff;
+        background: rgba(255, 255, 255, 0.7);
+        z-index: 999999999;
     }
     .header.open .logo{
         height: 50px;
