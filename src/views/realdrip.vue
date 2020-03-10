@@ -37,7 +37,7 @@
         <div class="flex flex-wrap justify-content-center align-items-center">
           <img class="rd-img" src="../assets/img/houses.jpg" alt="">
           <p class='rd-def par text-left'>
-            Most schools across rural communities and remote villages lack basic infrastructure and learning tools required for 21st-century education. Fair Afriql tackles this by adopting public schools in partnership with the government and providing new learning spaces, adequate infrastructure and up to date technology to ensure that every child irrespective of their background have access to equal educational support. We also have Specialised training to all members of fair through our integrity school of thought Set up fairafriq integrity school of thought in all African community and Live integrity personal development team program(IPDTP)  
+            We Build affordable low cost accommodation for the deprived community. Develop prototype low building schemes which will be funded by the wealth generating and employment scheme of the Foundation.  
           </p>
         </div>
       </span>

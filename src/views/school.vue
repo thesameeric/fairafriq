@@ -3,13 +3,14 @@
   <div class="flex column justify-content-center align-items-center about">
     <section class="flex col-lg-6 justify-content-center align-items-center about-hero ">
        <div class="pages-img-holder">
-         <img src="../assets/img/group.jpg" alt="">
+         <img src="../assets/img/full-frame-shot-of-stadium-247839.jpg" alt="">
        </div>
       <h1 class="page-quote">Every story has a beginning, this is ours</h1>
     </section>
     <section class="flex flex-wrap col-lg-6 justify-content-center align-items-center ss2">
       <span class="flex column align-items-center nowrap">
         <p class="heading text-left">EDUCATION / SCHOOL SUPPORT</p>
+        <img class="logo" src="../assets/logo.svg" alt="">
         <div class="flex flex-wrap justify-content-center align-items-center reverse-this">
           <p class='rd-def par text-left'>
             Most schools across rural communities and remote villages lack basic infrastructure and learning tools required for 21st-century education. Fair Afriql tackles this by adopting public schools in partnership with the government and providing new learning spaces, adequate infrastructure and up to date technology to ensure that every child irrespective of their background have access to equal educational support. We also have Specialised training to all members of fair through our integrity school of thought Set up fairafriq integrity school of thought in all African community and Live integrity personal development team program(IPDTP)  
@@ -21,6 +22,11 @@
    </div>
 </template>
 <style lang="scss" scoped>
+.logo {
+  height: 80px;
+  object-fit: contain;
+  margin: 20px 30px;
+}
 .about-hero {
   background-repeat: no-repeat;
   background-size: cover;

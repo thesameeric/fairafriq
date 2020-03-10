@@ -3,7 +3,7 @@
         class="flex col-lg-6 header justify-content-space-between align-items-center">
         <div>
             <a href="/">
-                <img class="logo" src="../assets/logo.svg" alt="">
+                <img class="logo" src="../assets/logo.jpg" alt="">
             </a>
         </div>
         <menu class="flex menu-holder">

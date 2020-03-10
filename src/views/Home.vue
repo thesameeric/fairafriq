@@ -61,35 +61,35 @@ FairAfriq is a non profit development organization transforming the society by e
             <router-link to="/team/EmmanuelFanimoh">
               <img class="pl-img" src="../assets/img/members/1.jpg" alt="image of Realdrip device">
               <p class="staff-name">Mr Emmanuel Fanimoh</p>
-              <p class="staff-title">CEO</p>
+              <p class="staff-title">Founder/CEO</p>
             </router-link>
           </li>
           <li class="flex column nowrap align-items-center">
             <router-link to="/team/AyotolaFanimoh">
               <img class="pl-img" src="../assets/img/members/2.jpg" alt="image of Realdrip device">
               <p class="staff-name">Mrs Ayotola O. Fanimoh</p>
-              <p class="staff-title">Project analyst</p>
+              <p class="staff-title">Executive Director, Corporate Development<br>and Field Operation</p>
             </router-link>
           </li>
           <li class="flex column nowrap align-items-center">
             <router-link to="/team/MarianOyindamolaFanimoh">
               <img class="pl-img" src="../assets/img/members/3.jpg" alt="image of Realdrip device">
               <p class="staff-name">Miss Marian Oyindamola Fanimoh</p>
-              <p class="staff-title">Public relations</p>
+              <p class="staff-title">Executive Director and Administration</p>
             </router-link>
           </li>
           <li class="flex column nowrap align-items-center">
             <router-link to="/team/TillyOpoku">
               <img class="pl-img" src="../assets/img/members/4.jpg" alt="image of Realdrip device">
               <p class="staff-name">Mrs Tilly Opoku</p>
-              <p class="staff-title">CEO</p>
+              <p class="staff-title">Executive Director of Ghana Urban Affairs</p>
             </router-link>
           </li>
           <li class="flex column nowrap align-items-center">
             <router-link to="/team/PetronellaKapijimpanga">
               <img class="pl-img" src="../assets/img/members/5.jpg" alt="image of Realdrip device">
               <p class="staff-name">Ms Petronella Kapijimpanga</p>
-              <p class="staff-title">Project analyst</p>
+              <p class="staff-title">Executive Director of Zambia Urban Affairs </p>
             </router-link>
           </li>
           <li class="flex column nowrap align-items-center">

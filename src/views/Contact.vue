@@ -12,9 +12,9 @@
                         </a>
                     </li>
                     <li>
-                        <a class="flex text-20 align-items-center" href="tel:+44-753-474-8947">
+                        <a class="flex text-20 align-items-center" href="tel:+44 7383096849">
                             <img class="mini-icons" src="../assets/icon/003-telephone.svg" alt="mail">
-                            +44-753-474-8947
+                            +44 7383096849
                         </a>
                     </li>
                     <li>
