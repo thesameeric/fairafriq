@@ -144,15 +144,6 @@
 </style>
 <script>
 export default {
-  data() {
-    return {
-      texts: ['Andriod', 'Medical', 'Nigeria'],
-      count: 0,
-    };
-  },
-  mounted() {
-    this.changeText();
-  },
   methods: {},
 };
 </script>

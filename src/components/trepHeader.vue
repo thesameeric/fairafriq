@@ -1,197 +1,342 @@
 <template>
-    <header id="header"
-        class="flex col-lg-6 header justify-content-space-between align-items-center">
-        <div>
-            <a href="/">
-                <img class="logo" src="../assets/logo.jpg" alt="">
-            </a>
-        </div>
-        <menu class="flex menu-holder">
-            <div @click="toggleMenu" id="menuToggle">
-                <input type="checkbox" id="menumenu" />
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav class="nav slideinMenu">
-                <router-link :to="{name: 'home'}">
-                    <a @click="toggleMenu2" href="">Home</a>
+    <header id="header" class="flex center middle">
+      <div class="flex center middle mar-15 logolize">
+          <img src="../assets/logo.jpg" alt="logo">
+          <div class="flex center pad-15" id="mobile-nav">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </div>
+      <nav class="menu">
+        <ul>
+            <li>
+                <router-link @click="closeMenu" :to="{name: 'home'}">Home</router-link>
+            </li>
+            <li>
+                <router-link @click="closeMenu" :to="{name: 'about'}">About</router-link>
+            </li>
+            <li>
+              <a class="pikined" href="#">What we do</a>
+              <ul>
+                <li>
+                  <router-link @click="closeMenu" :to="{name: 'school'}">
+                    School / Education</router-link>
+                </li>
+                <li>
+                  <router-link @click="closeMenu" :to="{name: 'what we do'}">Others</router-link>
+                </li>
+              </ul>
+            </li>
+            <li><router-link @click="closeMenu" :to="{name: 'our stories'}">
+                  Our stories
                 </router-link>
-                <router-link :to="{name: 'about'}">
-                    <a @click="toggleMenu2" href="">About</a>
+            </li>
+            <li><router-link @click="closeMenu" :to="{name: 'contact'}">
+                  Contact
                 </router-link>
-                <router-link :to="{name: 'what we do'}">
-                    <a @click="toggleMenu2" href="">What we do</a>
-                </router-link>
-                <router-link :to="{name: 'our stories'}">
-                    <a @click="toggleMenu2" href="">Our stories</a>
-                </router-link>
-                <router-link :to="{name: 'school'}">
-                    <a @click="toggleMenu2" href="">School / Education</a>
-                </router-link>
-                <router-link :to="{name: 'contact'}">
-                    <a @click="toggleMenu2" href="">Contact</a>
-                </router-link>
-            </nav>
-        </menu>
+            </li>
+        </ul>
+    </nav>
     </header>
 </template>
 <script>
 export default {
-  methods: {
-    getElement(element) {
-      const ele = document.querySelectorAll(element);
-      for (let i = 0; i < ele.length; i += 1) {
-        return ele[i];
+  mounted() {
+    let offset = window.pageYOffset;
+    const header = document.querySelector('#header');
+    window.onscroll = () => {
+      offset = window.pageYOffset;
+      if (offset >= 200) {
+        header.classList.add('open');
+      } else {
+        header.classList.remove('open');
       }
-    },
-    toggleMenu() {
-      const style = document.createElement('style');
-      const startTime = 0.3;
-      const timeDiff = 0.2;
+    };
 
-      document.head.appendChild(style);
-      const nav = this.getElement('.slideinMenu');
-      nav.classList.toggle('open');
-      const navA = nav.children;
-      for (let i = 0; i < navA.length; i += 1) {
-        navA[i].classList.add(`trepSlideIn${i}`);
-        style.sheet.insertRule(`.trepSlideIn${i} {margin-left:0px; animation-name: slideitin${i}; animation-duration: ${startTime + (i * timeDiff)}s; animation-iteration-count:1 } `);
-        style.sheet.insertRule(`@keyframes slideitin${i} { ${10 * i}% { margin-left:-500px; visibility:0;} 100% {margin-left: 0px; visibility:1} }`);
-      }
-    },
-    toggleMenu2() {
-      if (document.getElementById('menumenu').checked === true) {
-        document.getElementById('menumenu').checked = false;
-      }
-      const nav = this.getElement('.slideinMenu');
-      nav.classList.toggle('open');
-    },
+    if (offset >= 200) {
+      header.classList.add('open');
+    } else {
+      header.classList.remove('open');
+    }
+
+    function ele(selector) { return document.querySelectorAll(selector); }
+    const x = ele('.menu ul li a');
+    const mobile = ele('#mobile-nav');
+    const y = ele('.menu');
+
+    [].forEach.call(x, (el) => {
+      el.addEventListener('click', (e) => {
+        if (!el.classList.contains('pikined')) {
+          [].forEach.call(y, (a) => {
+            a.classList.toggle('down');
+          });
+          [].forEach.call(mobile, (u) => {
+            u.classList.toggle('open');
+          });
+        } else {
+          e.preventDefault();
+        }
+      });
+    });
+
+    [].forEach.call(mobile, (nav) => {
+      nav.addEventListener('click', (q) => {
+        nav.classList.toggle('open');
+        [].forEach.call(y, (u) => {
+          u.classList.toggle('down');
+        });
+      });
+    });
   },
+  methods: {
+    closeMenu() {
+      const y = document.querySelectorAll('.menu');
+      [].forEach.call(y, (u) => {
+        u.classList.toggle('down');
+      });
+    }
+  }
 };
 </script>
 <style scoped>
-    .header .logo {
-        height: 80px;
-        object-fit: contain;
-        margin: 20px 30px;
-    }
-    nav {
-        display: flex;
-        padding: 20px;
-    }
-    nav a {
-        padding: 5px 20px;
-        color: rgb(53, 53, 53);
-        font-weight: 500;
-    }
-    .nav a {
-        color: #000;
-    }
-    .header {
-        position: fixed;
-        left: 0; top: 0;
-        transition: all ease-in-out 2s;
-        z-index: 99999999999;
-    }
-    .header.open {
-        background: rgba(255, 255, 255, 0.7);
-        z-index: 999999999;
-    }
-    .header.open .logo{
-        height: 50px;
-        margin: 0 30px;
-    }
-    #menuToggle input
-    {
-        display: none;
-    }
-    @media only screen and (max-width: 720px) {
-        .menu-holder {
-            position: absolute;
-            top: 0;
-            min-width: 100%;
-        }
-        .nav {
-            display: none;
-            flex-flow: column nowrap;
-            align-items: flex-start;
-            height: 100vh;
-            min-width: 100%;
-            width: 100%;
-            background: rgb(255, 255, 255);
-        }
-        nav a {
-            color: #000;
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        .nav.open {
-            display: flex;
-            position: absolute;
-            padding-top: 90px;
-        }
-        #menuToggle
-        {
-            display: block;
-            height: 20px;
-            position: absolute;
-            right: 9px;
-            -webkit-user-select: none;
-            user-select: none;
-            margin: 20px;
-        }
+  header {
+    width: 100%;
+    padding: 0 11px;
+    position: fixed;
+    z-index: 9999999999;
+    top: 0; left: 0;
+    height:auto;
+  }
+  header.open {
+    background: #fa9b2f;
+    color: #FFF;
+    z-index: 999999999999;
+  }
+  header img {
+    width: 100px; height: 100px;
+    object-fit: contain;
+    margin: 0 25px;
+  }
+  header.open img {
+    width: 50px; height: 50px;
+  }
+  .recog-div {
+    width: 50%;
+  }
+  .fkup{
+    background-image: linear-gradient(to right, #2575fc 0%,#6a11cb  80%);
+    color: #FFF;
+  }
+  .recog-div img{
+    width: 100%; height: 450px;
+    object-fit: contain;
+  }
+  #mobile-nav{
+    display: none;
+    width: 35px;
+    height: 28px;
+    margin:0 10px;
+    align-self: center;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+  }
+  #mobile-nav span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    background: #FFF;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
 
-        #menuToggle input
-        {
-            display: block;
-            width: 40px;
-            height: 32px;
-            position: absolute;
-            top: -7px;
-            left: -5px;
-            cursor: pointer;
-            opacity: 0; /* hide this */
-            z-index: 2; /* and place it over the hamburger */
-            -webkit-touch-callout: none;
+  #mobile-nav span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+  }
+
+  #mobile-nav span:nth-child(odd) {
+    left:0px;
+    border-radius: 9px 0 0 9px;
+  }
+
+  #mobile-nav span:nth-child(1), #mobile-nav span:nth-child(2) {
+    top: 0px;
+  }
+
+  #mobile-nav span:nth-child(3), #mobile-nav span:nth-child(4) {
+    top: 10px;
+  }
+
+  #mobile-nav span:nth-child(5), #mobile-nav span:nth-child(6) {
+    top: 20px;
+  }
+
+  #mobile-nav.open span:nth-child(1),#mobile-nav.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  #mobile-nav.open span:nth-child(2),#mobile-nav.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  #mobile-nav.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+  }
+  #mobile-nav.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+  }
+
+  #mobile-nav.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+
+  #mobile-nav.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+
+  #mobile-nav.open span:nth-child(5) {
+    left: 5px;
+    top: 15px;
+  }
+
+  #mobile-nav.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 15px;
+  }
+  nav {
+      margin: 5px auto;
+  }
+
+  nav ul {
+      padding: 0;
+    margin: 0;
+      list-style: none;
+      position: relative;
+      }
+
+  nav ul li {
+      display:inline-block;
+      }
+
+  nav a {
+      display:block;
+      padding:10px;
+      color:#FFF;
+      text-decoration:none;
+  }
+
+  nav a:hover {
+      color: #CCC;
+  }
+
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+      display: none;
+      position: absolute;
+    border-top: 3px solid #FFF;
+    background: #fa9b2f;
+      top: 44px; /* the height of the main nav */
+  }
+
+  /* Display Dropdowns on Hover */
+  nav ul li:hover > ul {
+      display:inherit;
+  }
+
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+      min-width:170px;
+      float:none;
+      display:list-item;
+      position: relative;
+  }
+
+  /* Second, Third and more Tiers*/
+  nav ul ul ul li {
+      position: relative;
+      top:-60px;
+      left:170px;
+  }
+
+
+  /* Change this in order to change the Dropdown symbol */
+  li > a:after { font-family:"Ionicons";content:  "\f3d0"; padding: 5px; margin-top: 3px;}
+  li > a:only-child:after { content: ''; }
+
+    @media only screen and (max-width: 720px) {
+header{
+      flex-flow: column nowrap;
+    }
+    .logolize {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .menu {
+      margin: 0; padding: 0;
+      display: none;
+      width: 100%;
+      height: 0px; width: 0;
+      overflow: hidden;
+      flex-flow: column nowrap;
+      transition: height 2s ease-in-out;
+
+    }
+    .menu.down {
+      display: flex;
+      height: auto; width: 100%;
+      transition: height 2s ease-in;
+    }
+    nav ul li {
+        display:block;
+      text-align: center;
         }
-        #menuToggle span
-        {
-            display: block;
-            width: 33px;
-            height: 4px;
-            margin-bottom: 5px;
-            position: relative;
-            background: #333333;
-            border-radius: 3px;
-            z-index: 1;
-            transform-origin: 4px 0px;
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                        opacity 0.55s ease;
-        }
-        #menuToggle span:first-child
-        {
-            transform-origin: 0% 0%;
-        }
-        #menuToggle span:nth-last-child(2)
-        {
-            transform-origin: 0% 100%;
-        }
-        #menuToggle input:checked ~ span
-        {
-            opacity: 1;
-            transform: rotate(-45deg) translate(-2px, -2px);
-            background: #313131;
-        }
-        #menuToggle input:checked ~ span:nth-last-child(2)
-        {
-            opacity: 0;
-            transform: rotate(0deg) scale(0.2, 0.2);
-        }
-        #menuToggle input:checked ~ span:nth-last-child(3)
-        {
-            transform: rotate(45deg) translate(0, -1px);
-        }
+    #mobile-nav {
+      display: flex;
+    }
+    nav ul ul {
+        display: none;
+        position: inherit;
+      border-top: none;
+      background: #fa9b2f;
+        top: 44px; /* the height of the main nav */
+    }
+    nav ul li ul li {
+      text-align: center;
+      margin: 0 auto;
+    }
+    header {
+      background: #fa9b2f;
+      color: #FFF;
+    }
+    header img {
+      width: 50px; height: 50px;
+    }
     }
 </style>
