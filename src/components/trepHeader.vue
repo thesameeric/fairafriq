@@ -287,7 +287,7 @@ export default {
 
 
   /* Change this in order to change the Dropdown symbol */
-  li > a:after { font-family:"Ionicons";content:  "\f3d0"; padding: 5px; margin-top: 3px;}
+  li > a:after {content:  ""; padding: 5px; margin-top: 3px;}
   li > a:only-child:after { content: ''; }
 
     @media only screen and (max-width: 720px) {
