@@ -79,9 +79,9 @@
         ➢ Complaint 
       </p>
       <form @submit.prevent="sendMail" class="flex column nowrap sendmail" action="">
-        <input type="text" placeholder="Name" name="" id="">
-        <input type="text" placeholder="Phone number" name="" id="">
-        <textarea name="" placeholder="Drop your feedback here" id="" cols="30" rows="10"></textarea>
+        <input v-model="name" type="text" placeholder="Name" name="" id="" required>
+        <input v-model="mail" type="text" placeholder="Email or Phone number" name="" id="" required>
+        <textarea v-model="message" name="" placeholder="Drop your feedback here" id="" cols="30" rows="10" required></textarea>
         <button type="submit">{{mailStatus}}</button>
       </form>
     </section>
@@ -221,18 +221,37 @@ ul li, ul.dotted-ul li {
   }
 </style>
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       mailStatus: "Sumbit",
+      name: null,
+      mail: null,
+      message: null,
     };
   },
   mounted() {
-    this.changeText();
   },
   methods: {
     sendMail() {
       this.mailStatus = "Please wait ...";
+      axios.post('http://fairafriq.org/api/public/mail', {
+        senderName: this.name,
+        senderEmail: this.mail,
+        message: this.message,
+      }).then((response) => {
+        if (response.status === 200) {
+          alert('Your feedback has been sent. Thank you');
+        }else {
+          alert('Unable to send feedback at the moment. Try again later');
+        }
+      }).catch((err) => {
+        alert('Unable to send feedback at the moment try again later');
+      }).finally(() => {
+        this.mailStatus = 'Submit';
+      });
     }
   },
 };
